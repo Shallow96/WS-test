@@ -1,0 +1,434 @@
+@font-face {
+  font-family: 'MyriadProRegular';
+  src: url('../fonts/MyriadProRegular.eot');
+  src: url('../fonts/MyriadProRegular.eot') format('embedded-opentype'),
+  url('../fonts/MyriadProRegular.woff2') format('woff2'),
+  url('../fonts/MyriadProRegular.woff') format('woff'),
+  url('../fonts/MyriadProRegular.ttf') format('truetype'),
+  url('../fonts/MyriadProRegular.svg#MyriadProRegular') format('svg');
+}
+
+@font-face {
+  font-family: 'HelveticaNeue';
+  src: url('../fonts/HelveticaNeue.eot');
+  src: url('../fonts/HelveticaNeue.eot') format('embedded-opentype'),
+  url('../fonts/HelveticaNeue.woff2') format('woff2'),
+  url('../fonts/HelveticaNeue.woff') format('woff'),
+  url('../fonts/HelveticaNeue.ttf') format('truetype'),
+  url('../fonts/HelveticaNeue.svg#HelveticaNeue') format('svg');
+}
+
+@font-face {
+  font-family: 'ProximaNovaRegular';
+  src: url('../fonts/ProximaNovaRegular.eot');
+  src: url('../fonts/ProximaNovaRegular.eot') format('embedded-opentype'),
+  url('../fonts/ProximaNovaRegular.woff2') format('woff2'),
+  url('../fonts/ProximaNovaRegular.woff') format('woff'),
+  url('../fonts/ProximaNovaRegular.ttf') format('truetype'),
+  url('../fonts/ProximaNovaRegular.svg#ProximaNovaRegular') format('svg');
+}
+
+@font-face {
+  font-family: 'proximaNovaBold';
+  src: url('../fonts/proximaNovaBold.eot');
+  src: url('../fonts/proximaNovaBold.eot') format('embedded-opentype'),
+  url('../fonts/proximaNovaBold.woff2') format('woff2'),
+  url('../fonts/proximaNovaBold.woff') format('woff'),
+  url('../fonts/proximaNovaBold.ttf') format('truetype'),
+  url('../fonts/proximaNovaBold.svg#proximaNovaBold') format('svg');
+}
+
+@font-face {
+  font-family: 'proximanovasemibold';
+  src: url('../fonts/proximanovasemibold.eot');
+  src: url('../fonts/proximanovasemibold.eot') format('embedded-opentype'),
+  url('../fonts/proximanovasemibold.woff2') format('woff2'),
+  url('../fonts/proximanovasemibold.woff') format('woff'),
+  url('../fonts/proximanovasemibold.ttf') format('truetype'),
+  url('../fonts/proximanovasemibold.svg#proximanovasemibold') format('svg');
+}
+
+.highlighted{
+  background-color: transparent!important;
+}
+
+
+@mixin min-screen($res){
+  @media screen and (min-width: $res) {
+    @content;
+  }
+}
+@mixin max-screen($res){
+  @media screen and (max-width: $res) {
+    @content;
+  }
+}
+.container{
+  @include min-screen(1201px){
+    max-width: 965px!important;
+    width: 100%;
+  }
+}
+
+a{
+  text-transform: none;
+  color: inherit;
+  &:hover{
+    text-decoration: none;
+    color: inherit;
+  }
+}
+ul{
+  padding: 0;
+}
+li{
+  list-style: none;
+}
+
+header{
+  .container{
+    .logo{
+      outline: none;
+      margin-top: 15px;
+      margin-left: -8px;
+      margin-bottom: 33px;
+      img{
+        max-width: 136px;
+        width: 100%;
+        transition: 0.3s;
+        &:hover{
+          transform: scale(0.95);
+          transition: 0.3s;
+        }
+      }
+    }
+    .heading{
+      margin-top: 40px;
+      @include max-screen(767px){
+        margin-top: 10px;
+      }
+      .top_head{
+        position: relative;
+        @include max-screen(767px){
+          text-align: center;
+          margin: auto;
+        }
+        h2{
+          font: 35px 'MyriadProRegular';
+          line-height: 35px;
+          letter-spacing: -1.45px;
+          color: #262626;
+          @include max-screen(767px){
+            font-size: 30px;
+          }
+        }
+        nav{
+          max-width: 149px;
+          width: 100%;
+          font: 15px 'HelveticaNeue';
+          line-height: 29px;
+          letter-spacing: -0.45px;
+          color: #4090db;
+          border: solid 1px #4090db;
+          border-radius: 3px;
+          margin-left: 20px;
+          padding-left: 8px;
+          margin-top: -2px;
+          @include max-screen(767px){
+            position: absolute;
+            top: -20px;
+            right: 0;
+            max-width: 120px;
+            font-size: 12px;
+            line-height: 20px;
+          }
+        }
+
+      }
+      .head_info{
+        margin-top: 7px;
+        @include max-screen(767px){
+          justify-content: space-between;
+        }
+        li{
+          list-style: none;
+          margin-right: 27px;
+          @include max-screen(767px){
+            margin-right: 0;
+          }
+          a{
+            font: 17px 'ProximaNovaRegular';
+            @include max-screen(767px){
+              font-size: 14px;
+            }
+            span{
+              font: 17px 'proximaNovaBold';
+              @include max-screen(767px){
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+      form{
+        margin-bottom: 10px;
+        label{
+          font-family: 'Tahoma', serif;
+          font-size: 17px;
+        }
+        input{
+          margin-left: 25px;
+          max-width: 183px;
+          width: 100%;
+          height: 30px;
+          outline: none;
+          border: solid 1px #ccc;
+          border-radius: 3px;
+          padding-left: 5px;
+          &:nth-child(2){
+            margin-left: 15px;
+          }
+          &:hover{
+            border-color: #ccc;
+          }
+        }
+      }
+    }
+  }
+}
+
+.main_content{
+  background-color: #fafafa;
+  box-shadow: inset 0px 35px 20px -15px rgba(240,240,240,1);
+  .container{
+    padding-top: 71px;
+    @include max-screen(767px){
+      padding-top: 30px;
+    }
+    .card-item{
+      position: relative;
+      margin-bottom: 30px;
+      &:nth-child(2){
+        .card-item-info{
+          padding-left: 10px;
+          padding-right: 5px;
+          @include max-screen(991px){
+            top: 30%;
+          }
+        }
+      }
+      &:nth-child(3){
+        .card-item-info{
+          @include max-screen(991px){
+            top: 30%;
+          }
+          .count-row{
+            &:nth-child(2){
+              li{
+                &:nth-child(2){
+                  a{
+                    &:before{
+                      content: "\e902";
+                    }
+                  }
+                }
+              }
+            }
+
+          }
+        }
+      }
+      &:nth-child(4){
+        .card-item-info{
+          left: 25px;
+          top: 41%;
+          @include max-screen(991px){
+            top: 30%;
+          }
+        }
+      }
+      &:nth-child(5){
+        .card-item-info{
+          left: 25px;
+          top: 41%;
+          @include max-screen(991px){
+            top: 30%;
+          }
+          .count-row{
+            li{
+              &:nth-child(2){
+                a{
+                  &:before{
+                    content: "\e902";
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      &:nth-child(6){
+        .card-item-info{
+          left: 25px;
+          top: 41%;
+          @include max-screen(991px){
+            top: 30%;
+          }
+        }
+      }
+      &:nth-child(7){
+        .card-item-info{
+          left: 25px;
+          top: 41%;
+          @include max-screen(991px){
+            top: 30%;
+          }
+        }
+      }
+      &:nth-child(8){
+        .card-item-info{
+          left: 25px;
+          top: 41%;
+          @include max-screen(991px){
+            top: 30%;
+          }
+        }
+      }
+      &:nth-child(9){
+        .card-item-info{
+          left: 25px;
+          top: 41%;
+          @include max-screen(991px){
+            top: 30%;
+          }
+        }
+      }
+      &:hover{
+        .card_image{
+          img{
+            opacity: 1;
+            transform: scale(1.03);
+            border-radius: 10px;
+            transition: 0.3s;
+          }
+        }
+        .card-item-info{
+          margin-top: -15px;
+          transition: 0.3s;
+        }
+      }
+      .cam_icon{
+        width: 33px;
+        height: 23px;
+        position: absolute;
+        top: 15px;
+        right: 26px;
+      }
+      .card_image{
+        background-color: #000000;
+        width: 100%;
+        img{
+          width: 100%;
+          transition: 0.3s;
+          opacity: 0.6;
+        }
+      }
+      .card-item-info{
+        position: absolute;
+        top: 58.5%;
+        right: 15px;
+        bottom: 0;
+        left: 15px;
+        padding-left: 20px;
+        padding-right: 17px;
+        transition: 0.3s;
+        @include max-screen(991px){
+          top: 30%;
+        }
+        .count-row{
+          margin: 0;
+          &:nth-child(2){
+            margin-top: 17px;
+          }
+          li{
+            color: white;
+            &:nth-child(1){
+              width: 40%;
+              span{
+                font: 17px 'proximanovasemibold';
+                line-height: 20px;
+              }
+            }
+            &:nth-child(2){
+              width: 30%;
+              a{
+                font: 17px/20px 'proximaNovaBold';
+                @include max-screen(767px){
+                  font-size: 14px;
+                  line-height: 15px;
+                }
+                &:before{
+                  font-family: 'icomoon', serif;
+                  font-size: 22px;
+                  content: "\e901";
+                  color: #f8f8f8;
+                  vertical-align: middle;
+                  padding-right: 5px;
+                  @include max-screen(767px){
+                    font-size: 15px;
+                  }
+                }
+              }
+            }
+            &:nth-child(3){
+              width: 30%;
+              a{
+                font: 17px/20px 'proximaNovaBold';
+                @include max-screen(767px){
+                  font-size: 14px;
+                  line-height: 15px;
+                }
+                &:before{
+                  font-family: 'icomoon', serif;
+                  font-size: 22px;
+                  content: "\e900";
+                  color: #f8f8f8;
+                  vertical-align: middle;
+                  padding-right: 5px;
+                  @include max-screen(767px){
+                    font-size: 15px;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .card-foot{
+          width: 100%;
+          position: absolute;
+          color: white;
+          left: 0;
+          bottom: 13px;
+          font: 17px/17px 'proximanovasemibold';
+          text-align: center;
+        }
+      }
+    }
+    .load_content{
+      text-align: center;
+      display: block;
+      width: 126px;
+      border: solid 1px;
+      border-radius: 15px;
+      margin: 15px auto 75px;
+      text-transform: uppercase;
+      font: 12px/28px 'ProximaNovaRegular';
+      transition: 0.3s;
+      &:hover{
+        box-shadow:inset 0px 0px 20px 0px rgba(0,0,0,0.75);
+        border: solid 1px transparent;
+        transition: 0.3s;
+      }
+    }
+  }
+}
